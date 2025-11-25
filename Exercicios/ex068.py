@@ -1,5 +1,5 @@
 '''
-Crie um programa que leia :
+Crie um programa que leia:
 - o nome
 - sexo
 - idade de várias pessoas
@@ -13,54 +13,55 @@ d) Quantos homens com idade acima da média foram registados.
 '''
 
 lista = list()
-ordem = 0
 cont = 'S'
 
-# Registo dos dados :
-UserRegisted = 0
+# Registo dos dados:
+qtd_pessoas = 0
 idade = 0
 idade_total = 0
 mulheres = 0
 
+grupo = dict()
 while cont == 'S':
-    grupo = dict()
-    ordem += 1
+    qtd_pessoas += 1
 
     # Nome
-    grupo['Nome'] = input(f'\nDigite o nome da {ordem}ª pessoa: ')
+    grupo['Nome'] = input(f'\nDigite o nome da {qtd_pessoas}ª pessoa: ')
 
     # Sexo
-    sexo = input(f'[F/M] Digite o sexo de {grupo["Nome"]}: ')
-    if sexo == 'F':
-        mulheres += 1
-    grupo['Sexo'] = sexo
+    while True:
+        grupo['sexo'] = input(f'[F/M] Digite o sexo de {grupo["Nome"]}: ').strip().upper()
+
+        if grupo['sexo'] != 'M' and grupo['sexo'] != 'F':
+            print('Por favor introduza um sexo valido')
+            continue
+        else:
+            if grupo['sexo'] == 'F':
+                mulheres += 1
+            break
 
     # Idade
-    idade = int(input(f'Digite a idade de {grupo["Nome"]}: '))
-    idade_total += idade
-    grupo['Idade'] = idade
+    grupo['idade'] = int(input(f'Digite a idade de {grupo["Nome"]}: '))
+    idade_total += grupo['idade']
 
-    cont = input('\n[S/N] Deseja Continuar ? ')
-
-    UserRegisted += 1
+    # Novo registo ? S/N
+    cont = input('\n[S/N] Criar novo registo ? ')
 
 # Registo dos dados [P2] :
-media_idade = idade_total / UserRegisted
-homens = 1
+media_idade = idade_total / qtd_pessoas
 
-# Contar homens acima da média
-homens_acima_media = 0
-for pessoa in lista:
-    if pessoa['Sexo'] == 'M' and pessoa['Idade'] > media_idade:
-        homens_acima_media += 1
+# Homens acima da média
+qtd_homens_acima_media = 0
+for c in grupo:
+    if grupo['sexo'] == 'M':
+        if grupo['idade'] > media_idade:
+            qtd_homens_acima_media += 1
 
+# Finalização dos dados:
 print()
+print('##############################')
 print('--- Dados Registados ---')
-print(f'Pessoas Registadas : {UserRegisted}')
+print(f'Pessoas Registadas : {qtd_pessoas}')
 print(f'A media das idades é de {media_idade}')
 print(f'Foram registados {mulheres} mulheres')
-print(f'Homens com idade acima da media : {homens_acima_media}')
-
-
-
-
+print(f'Homens com idade acima da media : {qtd_homens_acima_media}')

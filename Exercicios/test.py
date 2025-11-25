@@ -1,16 +1,8 @@
-from random import randint
+num1 = int(input('Digite num1 : '))
+num2 = int(input('Digite num2 : '))
+num3 = int(input('Digite ultimo numero'))
 
-estrelas = []
-
-for c in range(0,100):
-    for a in range(0, 2):  # sao 2 estrelas
-        while True:
-            num = randint(1, 12)
-            if num in estrelas:  # verificar se ja tem
-                continue  # repetir ate sair diferente
-            else:  # apenas inclui se nao houver repetido
-                estrelas.append(f'{num}*')  # acrescentar a estrela (com *)
-                break  #
-
-    print(estrelas)
-    estrelas = []
+if num1 < num2 :
+    print(f'{num3}')
+if num1 > num2 :
+    print(f'-{num3}')

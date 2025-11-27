@@ -11,27 +11,32 @@ from time import sleep
 
 def contagem1():
     for c in range(0,20,2):
-        print(c)
+        print(c+2)
         sleep(0.2)
-    sleep(1)
-
+    print('Contagem Terminada !')
+    sleep(0.5)
+    menu()
 
 def contagem2():
-    for c in range(10,0,-1):
+    for c in range(10,-1,-1):
         print(c)
         sleep(0.2)
-    sleep(1)
-
+    print('Contagem Terminada !')
+    sleep(0.5)
+    menu()
 
 def contagem3(inicio, fim, passo):
     for c in range(inicio, fim, passo):
         print(c)
         sleep(0.2)
-    sleep(1)
+    print('Contagem Terminada !')
+    sleep(0.5)
+    menu()
 
 
 def menu():
     while True:
+        print('')
         print('--- Contagem de numeros ---')
         print('[ 1 ] - De 1 até 20, de 2 em 2')
         print('[ 2 ] - De 10 até 0, de 1 em 1')
@@ -50,10 +55,14 @@ def menu():
 
             if inicio > fim :
                 passo = -passo
+                fim = fim - 1
+            else :
+                fim = fim + 1
+
             contagem3(inicio, fim, passo)
         elif opcao == 4:
             print('Saindo ...')
             break
-
-
+        else:
+            print('Opçao Invalida !')
 menu()

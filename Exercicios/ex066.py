@@ -1,12 +1,12 @@
 '''
-Crie um simulador de crédito habitação simples e sem taxas, que solicite :
+Crie um simulador de crédito habitação simples e sem taxas, que solicite:
 - o nome,
 - ano de nascimento,
 - rendimentos mensais,
 - despesas mensais,
 - montante do crédito
 - prazo em anos
-guardando tudo dentro de um dicionário.
+guardando tudo dentro dum dicionário.
 
 Calcule, acrescentando ao dicionário:
 - a idade,

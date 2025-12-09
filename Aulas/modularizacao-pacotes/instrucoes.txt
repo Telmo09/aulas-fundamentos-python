@@ -1,0 +1,11 @@
+Funções manipulação do arquivo
+-> Adicionar notas
+-> Mostrar notas
+-> Apagar notas
+-> Pesquisar por Keyword
+
+Funções user-friendly
+-> Menu
+-> Cabeçalho
+-> Sleeps
+-> Pausa

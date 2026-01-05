@@ -24,15 +24,17 @@ def resultado(idade, nome):
     if idade >  18:
         with caminho.open('a', encoding='UTF-8', errors='ignore') as file:
             file.write(f'{nome}, {idade}.\nPode tirar a carta de condução\n\n')
-            print('Pode tirar a carta de condução')
+        print('Pode tirar a carta de condução')
+
     elif idade < 16:
         with caminho.open('a', encoding='UTF-8', errors='ignore') as file:
             file.write(f'{nome}, {idade}.\nNão pode tirar a carta de condução\n\n')
-            print('Não pode tirar a carta de condução')
+        print('Não pode tirar a carta de condução')
+
     else:
         with caminho.open('a', encoding='UTF-8', errors='ignore') as file:
             file.write(f'{nome}, {idade}.\nPode tirar a carta de condução, com autorização.\n\n')
-            print('Pode tirar a carta de condução, com autorização.')
+        print('Pode tirar a carta de condução, com autorização.')
 
 def inicio():
     print('--- Carta de condução ---')

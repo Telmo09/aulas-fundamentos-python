@@ -6,8 +6,7 @@ Crie uma classe chamada “Círculo” que possua um atributo privado para armaz
 para definir o raio, calcular a área e o perímetro do círculo.
 '''
 
-pi = 3.14159265359
-
+from math import pi
 
 def menu(circulo):
     while True:
